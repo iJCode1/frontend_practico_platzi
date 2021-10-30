@@ -1,0 +1,14 @@
+:root{
+  --black: #000000;
+  --hospital-green: #ACD9B2;
+  --text-input-field: #F7F7F7;
+  --very-light-pink: #C7C7C7;
+  --white: #FFFFFF;
+  --quicksand: 'Quicksand', sans-serif;
+}
+body{
+  font-family: 'Quicksand', sans-serif;
+}
+html{
+  font-size: 62.5%;
+}
