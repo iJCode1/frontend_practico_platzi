@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .login__container {
+    display: grid;
+    font-family: var(--quicksand);
+    min-height: 100vh;
+    max-width: 350px;
+    margin: 0 auto;
+    padding-inline: 18px;
+    place-items: center;
+    position: relative;
+    width: 100vw;
+  }
+  .login__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding-block-start: 34px;    
+    text-align: start;
+    width: 100%;
+  }
+  .login__content h2{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-block-end: 44px;
+    text-align: start;
+  }
+  .account__name{
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    margin-block-end: 10px;
+  }
+  .account__value {
+    color: var(--very-light-pink);
+    font-size: 1.6rem;
+    /* padding: 10px 8px; */
+    margin-block-end: 40px;
+    width: 100%;
+  }
+  .account__value:last-child{
+    margin-block-end: 0px;
+  }
+  .edit__button {
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid var(--hospital-green);
+    /* bottom: 0; */
+    color: var(--hospital-green);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.8rem;
+    /* left: 0; */
+    margin-block-start: 34px;
+    margin-block-end: 30px;
+    padding-block: 18px;
+    /* position: absolute; */
+    width: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    .login__content{
+      display: block;
+      height: initial;
+    }
+  }
+  
