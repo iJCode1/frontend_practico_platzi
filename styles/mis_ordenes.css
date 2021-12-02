@@ -1,0 +1,76 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.orden__container{
+  display: grid;
+  grid-template-columns: minmax(282px, 400px);
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 18px;
+  place-content: center;
+  width: 100%;
+}
+.orden__container h2{
+  display: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-block-end: 46px;
+}
+.orden__productos{
+  display: grid;
+  gap: 24px;
+  margin: 20px 0;
+  grid-auto-rows: auto;
+}
+.producto__item{
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr .4fr;
+  height: 100%;
+  width: 100%;
+}
+.producto__concepto{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+.producto__concepto p{
+  margin: 0;
+}
+.producto__concepto p:nth-child(1){
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.producto__concepto p:nth-child(2){
+  font-size: 1.4rem;
+  color: #797979;
+}
+.producto__monto{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.producto__monto p{
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.producto__monto span{
+  display: block;
+  background-image: url(../assets/icons/flechita.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+}
+@media screen and (min-width: 768px){
+  .orden__container h2{
+    display: block;
+    margin-block-start: 40px;
+  }
+}
