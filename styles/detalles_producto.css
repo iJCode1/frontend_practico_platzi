@@ -1,0 +1,125 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+.detalle_producto--container{
+  display: grid;
+  grid-template-columns: minmax(320px, 370px);
+  grid-auto-rows: max-content 1fr;
+  height: calc(100vh - 58px);
+  justify-content: end;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.detalle_producto{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+}
+.producto__image{
+  margin-block-end: 24px;
+  position: relative;
+}
+.producto__image > span{
+  display: none;
+  background-image: url("../assets/icons/icon_close.png");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: center;
+  border-radius: 50%;
+  background-color: var(--white);
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+}
+.detalle_producto--container img{
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 320px;
+  object-fit: cover;
+  width: 100%;
+}
+.producto__puntos{
+  text-align: center;
+  margin-block-start: 14px;
+}
+.producto__puntos span{
+  display: inline-block;
+  background-color: var(--very-light-pink);
+  background-size: 10px;
+  border-radius: 50%;
+  height: 10px;
+  margin: 0 3px;
+  width: 10px;
+}
+.producto__puntos span:nth-child(1){
+  background-color: var(--hospital-green);
+}
+.producto__info{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  font-weight: 300;
+  height: 100%;
+  justify-content: space-between;
+  padding-inline: 18px;
+  padding-block-end: 20px;
+}
+.producto__info__text p,
+.producto__info__text h3{
+  margin: 0;
+}
+.producto__info__text > p:nth-child(1){
+  font-weight: bold;
+  margin-block-end: 6px;
+}
+.producto__info__text > p:nth-child(3){
+  font-size: 1.6rem;
+  margin-block-start: 20px;
+  margin-block-end: 54px;
+}
+.producto__info__text h3{
+  color: #797979;
+  font-weight: normal;
+}
+.add_cart{
+  background-color: var(--hospital-green);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: 500;
+  place-content: center;
+  padding-block: 18px;
+  width: 100%;
+}
+.add_cart > span{
+  background-image: url("../assets/icons/icon_shopping_cart.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  color: white;
+  display: inline-block;
+  height: 20px;
+  margin-inline-end: 10px;
+  width: 20px;
+}
+@media screen and (min-width: 768px){
+  .detalle_producto{
+    max-height: 700px;
+  }
+}
+@media screen and (min-width: 1024px){
+  .producto__image > span{
+    display: inline-block;
+  }
+  .detalle_producto--container{
+    height: calc(100vh - 78px);
+  }
+}
