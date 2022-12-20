@@ -213,6 +213,7 @@ html{
   padding: 16px 48px;
   opacity: 0;
   transition: opacity .4s ease-in-out;
+  background-color: var(--white);
 }
 
 .menu.inactive{
@@ -275,5 +276,146 @@ html{
 @media screen and (min-width: 1024px) {
   .menu{
     display: none;
+  }
+}
+
+/****************** Carrito de compras ******************/
+.orden__container{
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(282px, 400px);
+  margin: 0 auto;
+  /* min-height: 100vh; */
+  padding: 0 18px;
+  justify-content: end;
+  width: 100%;
+  opacity: 1;
+  transition: opacity .2s;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: absolute;
+  inset-inline: 0;
+}
+
+.orden__container.inactive{
+  opacity: 0; 
+}
+
+.orden__container h2{
+  display: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-block: 0;
+}
+
+.orden__container h2 span{
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #797979;
+  cursor: pointer;
+  display: inline-block;
+  height: 16px;
+  margin-inline-end: 24px;
+  width: 24px;
+}
+
+.orden{
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.shopping__sumatoria{
+  align-items: center;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+  display: flex;
+  font-weight: bold;
+  font-size: 1.6rem;
+  justify-content: space-between;
+  margin-block-end: 18px;
+  padding: 18px;
+  width: inherit;
+}
+
+.shopping__sumatoria p{
+  margin: 0;
+}
+
+.orden__concepto p:nth-child(1){
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+.orden__productos{
+  display: grid;
+  gap: 24px;
+  margin: 0;
+  grid-auto-rows: 76px;
+}
+
+.producto__item{
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr .4fr;
+  height: 100%;
+  width: 100%;
+}
+
+.producto{
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  height: 100%;
+  width: 100%;
+}
+
+.producto img{
+  height: 76px;
+  border-radius: 20px;
+  object-fit: cover;
+  width: 76px;
+}
+
+.producto p{
+  color: #797979;
+  font-size: 1.4rem;
+}
+
+.producto__monto{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.producto__monto p{
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.producto__monto span{
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-image: url("../assets/icons/icon_close.png");
+  cursor: pointer;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+.shopping__checkout{
+  background-color: var(--hospital-green);
+  border: none;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 1.6rem;
+  padding: 18px 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px){
+  .orden__container h2{
+    display: block;
   }
 }
