@@ -295,10 +295,12 @@ html{
   margin: 0 auto;
   position: absolute;
   inset-inline: 0;
+  z-index: 5;
 }
 
 .orden__container.inactive{
   opacity: 0; 
+  z-index: -1;
 }
 
 .orden__container h2{
@@ -514,10 +516,12 @@ html{
   inset-block-start: 9rem;
   opacity: 1;
   transition: opacity .2s ease-in-out;
+  z-index: 5;
 }
 
 .detalle_producto--container.inactive{
   opacity: 0;
+  z-index: -1;
 }
 
 .detalle_producto{

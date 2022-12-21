@@ -1,10 +1,12 @@
-$navbar__account = document.querySelector('.navbar__account > p')
-$menu_card = document.querySelector('.menu__card')
-$hamburgerIcon = document.querySelector('.navbar__icon')
-$menuMobile = document.querySelector('.menu')
-$navbar__cart = document.querySelector('#navbar__cart')
-$orden__container = document.querySelector('.orden__container')
-$home__cards = document.querySelector('.home__cards')
+const $navbar__account = document.querySelector('.navbar__account > p')
+const $menu_card = document.querySelector('.menu__card')
+const $hamburgerIcon = document.querySelector('.navbar__icon')
+const $menuMobile = document.querySelector('.menu')
+const $navbar__cart = document.querySelector('#navbar__cart')
+const $orden__container = document.querySelector('.orden__container')
+const $home__cards = document.querySelector('.home__cards')
+const $detalle_producto__container = document.querySelector('.detalle_producto--container')
+const $detalle_producto__close = document.querySelector('.producto__image > span')
 
 const arrayProducts = [
   {
@@ -31,8 +33,10 @@ const arrayProducts = [
 
 const toggleDesktopMenu = () =>{
   const isCartMenuOpen = !$orden__container.classList.contains('inactive')
+  const isCartModalOpen = !$detalle_producto__container.classList.contains('inactive')
 
   isCartMenuOpen ? $orden__container.classList.add('inactive') : null
+  isCartModalOpen ? $detalle_producto__container.classList.add('inactive') : null
 
   $menu_card.classList.toggle('inactive')
 }
@@ -49,9 +53,12 @@ const toggleMobileMenu = () => {
 const toggleCartMenu = () => {
   const isDesktopMenuOpen = !$menu_card.classList.contains('inactive')
   const isMobileMenuOpen = $menuMobile.classList.contains("inactive")
+  const isDetalleProductoContainerOpen = !$detalle_producto__container.classList.contains('inactive')
 
   isDesktopMenuOpen ? $menu_card.classList.add('inactive') : null
   isMobileMenuOpen ? $menuMobile.classList.remove('inactive') : null
+  isDetalleProductoContainerOpen ? $detalle_producto__container.classList.add('inactive') : null
+
 
   $orden__container.classList.toggle('inactive')
 }
@@ -85,8 +92,7 @@ const renderProducts = (array) => {
     const $iconImage = document.createElement('img')
     $iconImage.setAttribute('src', '../assets/icons/bt_add_to_cart.svg')
     $iconImage.setAttribute('alt', 'Icono de añadir al carrito')
-    
-    
+    $iconImage.addEventListener('click', showCartModal)
     
     $item__icon.appendChild($iconImage)
     $item__text.append($item__price, $item__name)
@@ -97,22 +103,21 @@ const renderProducts = (array) => {
   }
 }
 
+const showCartModal = () => {
+  const isDesktopMenuOpen = !$menu_card.classList.contains('inactive')
+
+  isDesktopMenuOpen ? $menu_card.classList.add('inactive') : null
+
+  $detalle_producto__container.classList.remove('inactive')
+}
+
+const closeCartModal = () => {
+  $detalle_producto__container.classList.add('inactive')
+}
+
 $navbar__account.addEventListener('click', toggleDesktopMenu)
 $hamburgerIcon.addEventListener('click', toggleMobileMenu)
 $navbar__cart.addEventListener('click', toggleCartMenu)
+$detalle_producto__close.addEventListener('click', closeCartModal)
 
 renderProducts(arrayProducts)
-/*
-  <div class="card__item">
-    <img src="./assets/images/estanteria.webp" alt="Imagen del producto de una estanteria">
-    <div class="item__text--wrapper">
-      <div class="item__text">
-        <h3 class="item__price">$ 120,00</h3>
-        <p class="item__name">Estanteria</p>
-      </div>
-      <div class="item__icon">
-        <img src="./assets/icons/bt_add_to_cart.svg" alt="Icono de añadir al carrito">
-      </div>
-    </div>
-  </div>
-*/
