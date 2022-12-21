@@ -324,6 +324,7 @@ html{
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 1rem 2rem;
 }
 
 .shopping__sumatoria{
@@ -417,5 +418,83 @@ html{
 @media screen and (min-width: 768px){
   .orden__container h2{
     display: block;
+  }
+}
+
+/****************** Lista de productos ******************/
+.home__container{
+  padding-inline: 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home__cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 140px);
+  grid-auto-flow: row;
+  gap: 12px;
+  justify-content: center;
+  padding-block-start: 30px;
+}
+
+.card__item{
+  margin-block-end: 10px;
+  width: 100%;
+}
+
+.card__item > img{
+  border-radius: 20px;
+  height: 140px;
+  object-fit: cover;
+  margin-block-end: 11px;
+  width: 100%;
+}
+
+.item__text--wrapper{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__price,
+.item__name{
+  margin: 0;
+}
+
+.item__price{
+  font-weight: 1.6rem;
+  margin-block-end: 4px;
+}
+
+.item__name{
+  color: var(--very-light-pink);
+}
+
+.item__icon img{
+  height: 30px;
+  margin: 0;
+  width: 30px;
+}
+
+@media screen and (min-width: 768px){
+  .home__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    grid-auto-flow: row;
+    gap: 24px;
+    justify-content: center;
+    padding-block-start: 30px;
+  }
+
+  .card__item{
+    width: 100%;
+  }
+
+  .card__item > img{
+    border-radius: 20px;
+    height: 240px;
+    object-fit: cover;
+    margin-block-end: 11px;
+    width: 100%;
   }
 }
